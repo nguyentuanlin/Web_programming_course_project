@@ -1,0 +1,475 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang */
+  background: #008fd5 no-repeat 0px 0px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  background-image: url(../images/bann.jpg);
+}
+
+a {
+  color: #fff;
+}
+
+/* Thanh thông báo chào mừng*/
+.hero.container {
+  display: flex;
+  justify-content: space-between; /* Các phần tử con sẽ được phân chia một cách đều giữa */
+}
+#hero {
+  background-color: rgba(255, 255, 255, 0);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  padding: 10px;
+  margin-top: 130px;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: -7;
+  z-index: -1;
+}
+#hero h1 {
+  display: block;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+  margin: 0;
+  padding: 10px;
+}
+#hero h1:nth-child(1) {
+  animation-delay: 1s;
+}
+
+#hero h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#hero h1:nth-child(3) {
+  animation: text_reveal_name 0.5s ease forwards;
+  animation-delay: 3s;
+}
+#hero h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: rgb(238, 255, 221);
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+#hero h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+#hero .hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+#hero .cta {
+  display: inline-block;
+  padding: 10px 30px;
+  color: rgb(100, 77, 1);
+  background-color: transparent;
+  border: 2px solid rgb(0, 52, 16);
+  font-size: 2rex;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+#hero .cta:hover {
+  color: rgb(24, 45, 131);
+  background-color: rgb(252, 243, 232);
+}
+/*end hero section */
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+@keyframes text_reveal {
+  100% {
+    color: rgb(59, 81, 149);
+  }
+}
+@keyframes text_reveal_name {
+  100% {
+    color: rgb(33, 90, 147);
+    font-weight: 1000;
+  }
+}
+
+/* Header */
+.header {
+  color: #008fd5;
+  position: fixed; /* Đặt vị trí cố định */
+  top: 0; /* Vị trí từ trên xuống */
+  left: 0; /* Vị trí từ trái sang */
+  width: 100%; /* Chiều rộng tối đa */
+  z-index: 1000; /* Đảm bảo header hiển thị trên các phần khác */
+  /* Màu nền với độ trong suốt */
+  /* Các thuộc tính khác bạn muốn áp dụng cho header */
+}
+
+/* Header content */
+.header-content {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+/* Logo */
+.logo {
+  max-width: 120px;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+/* Site title */
+.site-title {
+  margin: 0;
+  font-size: 30px;
+}
+
+/* Main menu */
+
+.main-menu {
+  display: flex; /* Sử dụng flexbox */
+  height: 40px;
+}
+/* Menu list */
+.menu-list {
+  /* list-style-type: none;
+    padding: 0; */
+  background-color: #008fd5;
+  margin-top: -10px;
+  display: flex;
+  justify-content: space-around; /* Các mục được căn giữa và cách đều nhau */
+  list-style-type: none;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 60px;
+  align-items: center; /* Căn các mục theo trục dọc */
+}
+
+/* Menu item */
+.menu-list li {
+  display: inline;
+  /* margin-right: 10px; */
+  flex: 1; /* Mỗi mục chiếm phần bằng nhau của không gian có sẵn */
+  text-align: center; /* Căn giữa nội dung trong mỗi mục */
+}
+
+/* Menu link */
+.menu-list li a {
+  text-decoration: none;
+}
+
+/* Thiết lập hiệu ứng chuyển động */
+.main-menu {
+  margin: 0;
+  /* Màu sắc nhẹ nhàng cho thanh điều hướng */
+  color: #fff; /* Màu văn bản trắng */
+  padding: 5px 0;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng mờ */
+}
+
+.main-menu ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.main-menu ul li {
+  display: inline;
+  margin-right: 20px;
+}
+.main-menu ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+  position: relative;
+}
+
+.main-menu ul li a:hover {
+  color: #262626; /* Thay đổi màu khi hover */
+  font-weight: bold; /* Tăng độ đậm của văn bản */
+}
+
+.main-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #008fd5;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.main-menu ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.main-menu ul a {
+  font-size: 20px;
+  font-weight: ;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: background-color 0.5s ease;
+  border-radius: 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.main-menu ul a:hover {
+  background-color: #26b1c7;
+}
+
+.body-content {
+  width: 100%; /* Đảm bảo rằng main chiếm toàn bộ chiều rộng của phần tử cha */
+  height: 100vh; /* Đảm bảo rằng main chiếm toàn bộ chiều cao của màn hình */
+  position: relative; /* Đảm bảo tính tương đối để hình ảnh có thể vị trí tuyệt đối */
+  overflow: hidden; /* Ngăn chặn tràn bộ cuộn nếu hình ảnh lớn hơn main */
+}
+
+.body-content img {
+  position: absolute; /* Để hình ảnh vị trí tuyệt đối trong phần tử cha */
+  top: 0%;
+  bottom: 0%;
+}
+
+/*nội dung màn hình chính*/
+/*phần phía trên */
+.hero container {
+  margin: 12px auto 48px auto;
+  padding: 32px 0;
+  max-width: 700px;
+  min-height: 360px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-box_frist {
+  padding: 4px 16px;
+  background-color: rgba(223, 219, 219, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(223, 219, 219, 0.2);
+  flex: 1;
+  margin-left: 20px;
+  transition: transform 0.5s ease;
+}
+
+.box2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.info-box_frist:hover,
+.box2:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.info-box_frist a,
+.box2 a {
+  text-decoration: none;
+  color: #333;
+}
+
+.info-box_frist ul,
+.box2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-box_frist ul li,
+.box2 ul li {
+  margin-bottom: 10px;
+}
+
+/* Hiệu ứng nổi khối khi di chuyển chuột vào */
+.info-box_frist ul li a,
+.info-box_frist ul li a:hover,
+.box2 ul li a:hover {
+  text-decoration: underline;
+}
+
+.info-box1 {
+  flex: 1;
+  padding: 4px 16px;
+  background-color: rgba(223, 219, 219, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(223, 219, 219, 0.2);
+}
+
+.info-box2 {
+  margin-top: 10px;
+  flex: 1;
+  padding: 4px 16px;
+  background-color: rgba(223, 219, 219, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(223, 219, 219, 0.2);
+}
+
+/*phần phía dưới*/
+.info-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+  background-color: rgb(164, 160, 160); /* Màu trắng với độ trong suốt 0.5 */
+  padding: 50px;
+}
+.box2 {
+  flex: 1;
+}
+.info-box {
+  width: calc(33.33% - 20px);
+  flex: 1;
+  background-color: rgba(223, 219, 219, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(223, 219, 219, 0.2);
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+.info-box:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.info-box:last-child {
+  margin-right: 0;
+}
+
+.info-box h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.info-box p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.info-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-box ul li {
+  margin-bottom: 10px;
+}
+
+.info-box ul li a {
+  text-decoration: none;
+  color: #5d748b;
+  transition: color 0.3s ease;
+}
+
+.info-box ul li a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+/**/
+/* Footer Styles */
+.footer {
+  font-size: 14px;
+  margin: 0px;
+  display: flex;
+  /* justify-content: space-around; Các mục được căn giữa và cách đều nhau */
+  list-style-type: none;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  align-items: center; /* Căn các mục theo trục dọc */
+  /* background-color: rgba(136, 136, 136, 0.2); Màu xám với độ trong suốt 80% */
+  color: #fff;
+  padding: 30px 200px;
+  text-align: center;
+  justify-content: space-between;
+  align-items: flex-start; /* Căn đỉnh của hai cột */
+}
+.bi {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.col1,
+.col2 {
+  flex: 1;
+  margin: 20px;
+  text-align: left;
+}
+
+.col1 p,
+.col2 p {
+  margin-bottom: 5px;
+}
+
+/* Social Icons */
+/* .social-icons {
+    margin-top: 10px;
+} */
+
+.social-icons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  margin-right: 5px;
+  /* border-radius: 50%; */
+}
+
+/* .social-icons a:hover {
+    background-color: #279fd7;
+    color: #fff;
+} */
+
+.social-icons ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
